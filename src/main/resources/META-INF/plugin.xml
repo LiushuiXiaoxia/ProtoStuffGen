@@ -1,0 +1,50 @@
+<idea-plugin>
+    <id>cn.mycommons.stuff</id>
+    <name>Protostuff Annotation Tool</name>
+    <vendor email="xiaqiulei@126.com"
+            url="https://github.com/LiushuiXiaoxia/ProtoStuffGen">
+        LiushuiXiaoxia
+    </vendor>
+
+    <description><![CDATA[
+      Auto add or remove protstuff annotation plugin.
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="TagAddAction"
+                class="cn.mycommons.stuff.action.tag.TagAddAction"
+                text="Add Proto Stuff Tag">
+            <add-to-group group-id="CodeMenu"
+                          anchor="last"/>
+            <add-to-group group-id="GenerateGroup"
+                          anchor="last"/>
+        </action>
+        <action id="TagRemoveAction"
+                class="cn.mycommons.stuff.action.tag.TagRemoveAction"
+                text="Remove Proto Stuff Tag">
+            <add-to-group group-id="CodeMenu"
+                          anchor="last"/>
+            <add-to-group group-id="GenerateGroup"
+                          anchor="last"/>
+        </action>
+
+    </actions>
+
+</idea-plugin>
